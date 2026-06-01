@@ -17,7 +17,10 @@ namespace athelticFitness.Controllers
         {
             context = new GymContext();
         }
-
+        public MembershipController(GymContext context)
+        {
+            this.context = context;
+        }
         public async Task<Membership> CreateMembership(Membership membership)
         {
             var clientExists = await context.Clients.AnyAsync(c => c.Id == membership.ClientId);

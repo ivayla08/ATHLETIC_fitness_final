@@ -17,6 +17,10 @@ namespace athelticFitness.Controllers
         {
             context = new GymContext();
         }
+        public CoachController(GymContext context)
+        {
+            this.context = context;
+        }
 
         public async Task<Coach> CreateCoach(Coach coach)
         {

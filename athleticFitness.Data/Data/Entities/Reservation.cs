@@ -12,5 +12,7 @@ namespace athletic_fitness.Data.Entities
         public Client Client { get; set; }
         public int WorkoutId {  get; set; }
         public Workout Workout { get; set; }
+
+        public string Info => Workout.WorkoutInfo;
     }
 }

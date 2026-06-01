@@ -17,6 +17,10 @@ namespace athelticFitness.Controllers
         {
             context = new GymContext();
         }
+        public ReservationController(GymContext context) 
+        {
+            this.context = context;
+        }
 
         public async Task<Reservation> CreateReservation(Reservation reservation)
         {
@@ -31,16 +35,36 @@ namespace athelticFitness.Controllers
             {
                 throw new ArgumentException("WorkoutId does not exist.");
             }
-            Client client=context.Clients.Find(reservation.ClientId);
-            var clientHasRes=await context.Reservations.AnyAsync(x=>x.ClientId==reservation.ClientId && x.WorkoutId==reservation.WorkoutId);
+
+            Workout workout = await context.Workouts.FirstOrDefaultAsync(x => x.Id == reservation.WorkoutId);
+            if (workout.Capacity <= 0)
+            {
+                throw new ArgumentException("This class is fully booked");
+            }
+            var clientHasRes = await context.Reservations.AnyAsync(x => x.ClientId == reservation.ClientId && x.WorkoutId == reservation.WorkoutId);
             if (clientHasRes)
             {
                 throw new ArgumentException("You have already booked this workout");
             }
 
-            await context.Reservations.AddAsync(reservation);
-            await context.SaveChangesAsync();
-            return reservation;
+            Client client = context.Clients.Find(reservation.ClientId);
+
+            using var transaction = await context.Database.BeginTransactionAsync();
+            try
+            {
+                await context.Reservations.AddAsync(reservation);
+                workout.Capacity--;
+
+                await context.SaveChangesAsync();
+                await transaction.CommitAsync();
+
+                return reservation;
+            }
+            catch
+            {
+                await transaction.RollbackAsync();
+                throw;
+            }
         }
 
         public async Task<List<Reservation>> GetAllReservations(int userId)
@@ -68,7 +92,12 @@ namespace athelticFitness.Controllers
 
             if (reservation == null) return false;
 
+            Workout workout = await context.Workouts.FirstOrDefaultAsync(x => x.Id == reservation.WorkoutId);
             context.Reservations.Remove(reservation);
+            if (workout != null)
+            {
+                workout.Capacity++;
+            }
             await context.SaveChangesAsync();
             return true;
         }

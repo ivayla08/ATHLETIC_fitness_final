@@ -31,6 +31,7 @@ namespace ATHLETIC_fitness2
         private async void LoadCombos()
         {
             GymController controller = new GymController();
+            ReservationController reservationController = new ReservationController();  
             comboBox1.DataSource = await controller.GetAllGyms();
             comboBox1.DisplayMember = "FullAddress";
             if (comboBox1.SelectedItem != null)
@@ -49,6 +50,8 @@ namespace ATHLETIC_fitness2
             comboBox3.Items.Add("3 MONTH MEMBERSHIP €69.99");
             comboBox3.Items.Add("ONE-TIME WORKOUT €4.99");
 
+            comboBox4.DataSource = await reservationController.GetAllReservations(currentUser.Id);
+            comboBox4.DisplayMember = "Info";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -88,25 +91,38 @@ namespace ATHLETIC_fitness2
 
         private async void button8_Click(object sender, EventArgs e)
         {
+            if (comboBox2.SelectedItem == null)
+            {
+                MessageBox.Show("Select a workout class from the list!");
+                return;
+            }
             try
             {
-                ClientController clientController = new ClientController();
                 Workout workout = (Workout)comboBox2.SelectedItem;
+
+                ClientController clientController = new ClientController();
                 Client client = await clientController.GetClientByUserId(currentUser.Id);
+
+                if (client == null)
+                {
+                    MessageBox.Show("Client profile not found.");
+                    return;
+                }
+
                 Reservation reservation = new Reservation
                 {
                     WorkoutId = workout.Id,
-                    ClientId = client.Id,
-
+                    ClientId = client.Id
                 };
+
                 await reservationController.CreateReservation(reservation);
                 MessageBox.Show("You successfully booked a workout class!");
-            }
+            }           
             catch (Exception ex)
             {
+                
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void button7_Click_1(object sender, EventArgs e)
@@ -150,6 +166,7 @@ namespace ATHLETIC_fitness2
 
         private async void button11_Click(object sender, EventArgs e)
         {
+            richTextBox1.Clear();
             List<Reservation> myRes = await reservationController.GetAllReservations(currentUser.Id);
             foreach (var item in myRes)
             {
@@ -296,6 +313,43 @@ namespace ATHLETIC_fitness2
         private void button18_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 0;
+        }
+
+        private async void button19_Click(object sender, EventArgs e)
+        {
+            MembershipController membershipController = new MembershipController();
+            ClientController clientController = new ClientController();
+            Client client = await clientController.GetClientByUserId(currentUser.Id);
+            Membership? mem = await membershipController.GetMembershipByCleintId(client.Id);
+
+            if (mem == null)
+            {
+                richTextBox4.AppendText($"No active membership");
+            }
+            else
+            {
+                richTextBox4.AppendText($"Type: {mem.MembershipType} \n{mem.StartDate} - {mem.EndDate}\nPrice: {mem.Price}");
+            }
+        }
+
+        private async void button20_Click(object sender, EventArgs e)
+        {
+            ReservationController reservationController = new ReservationController();
+            Reservation reservation=comboBox4.SelectedItem as Reservation;
+            if (reservation == null) 
+            {
+                MessageBox.Show("Select reservation!");
+                return;
+            }
+            bool result = await reservationController.DeleteReservation(reservation.ClientId, reservation.WorkoutId);
+            if (result)            
+            {
+                MessageBox.Show("You successfully canceled your reservation!");
+            }
+            else
+            {
+                MessageBox.Show("Cannot cancel reservation");
+            }
         }
     }
 }
