@@ -65,9 +65,7 @@ namespace ATHLETIC_fitness2
 
                     MessageBox.Show("Registration successful!");
                     this.Close();
-
-                    ClientForm fom = new ClientForm();
-                    fom.ShowDialog();
+                 
                 }                    
             }
            
