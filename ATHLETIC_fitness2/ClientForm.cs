@@ -97,6 +97,11 @@ namespace ATHLETIC_fitness2
                 MessageBox.Show("Select a workout class from the list!");
                 return;
             }
+            if (comboBox1.SelectedItem == null) 
+            {
+                MessageBox.Show("Select a gym!");
+                return;
+            }
             try
             {
                 Workout workout = (Workout)comboBox2.SelectedItem;
@@ -144,6 +149,11 @@ namespace ATHLETIC_fitness2
             if (textBox1.Text != currentUser.Username || textBox2.Text != currentUser.Password)
             {
                 MessageBox.Show("Invalid username or password");
+                return;
+            }
+            if(string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text)  || string.IsNullOrWhiteSpace(textBox3.Text) || string.IsNullOrWhiteSpace(textBox4.Text) || string.IsNullOrWhiteSpace(textBox5.Text) || string.IsNullOrWhiteSpace(textBox6.Text) || string.IsNullOrWhiteSpace(textBox7.Text) || string.IsNullOrWhiteSpace(textBox8.Text))
+            {
+                MessageBox.Show("All fields are required!");
             }
             else
             {

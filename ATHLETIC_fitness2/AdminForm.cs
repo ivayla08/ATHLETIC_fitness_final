@@ -103,6 +103,12 @@ namespace ATHLETIC_fitness2
             string username = textBox1.Text;
             string password = textBox2.Text;
 
+            if(string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text) || string.IsNullOrWhiteSpace(textBox3.Text) || comboBox1.SelectedItem == null)
+            {
+                MessageBox.Show("All fields are required!");
+                return;
+            }
+
             if (comboBox1.SelectedItem.ToString() == RoleType.Admin.ToString())
             {
                 User user = new User
@@ -141,6 +147,11 @@ namespace ATHLETIC_fitness2
             GymController gymController = new GymController();
             string city = textBox4.Text;
             string address = textBox5.Text;
+            if (string.IsNullOrWhiteSpace(textBox4.Text) || string.IsNullOrWhiteSpace(textBox5.Text))
+            {            
+                MessageBox.Show("All fields are required!");
+                return;
+            }
             Gym gym = new Gym
             {
                 City = city,
@@ -360,16 +371,22 @@ namespace ATHLETIC_fitness2
 
         private async void button24_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textBox10.Text) || string.IsNullOrWhiteSpace(textBox11.Text) || string.IsNullOrWhiteSpace(textBox12.Text) || string.IsNullOrWhiteSpace(textBox13.Text) || string.IsNullOrWhiteSpace(textBox14.Text))
+            {
+                MessageBox.Show("All fields are required!");
+                return;
+            }
+
             int id = int.Parse(textBox10.Text);
             string username = textBox11.Text;
             string password = textBox12.Text;
-            string newPass = textBox13.Text;
+            string newPass = textBox13.Text;            
 
             List<User> users = await userController.GetAllUsers();
             User currentUser = users.FirstOrDefault(x => x.Username == username && x.Id == id && x.Password == password);
             if (currentUser == null)
             {
-                MessageBox.Show("Invalid data");
+                MessageBox.Show("Invalid user");
             }
             else
             {
@@ -391,10 +408,16 @@ namespace ATHLETIC_fitness2
 
         private async void button25_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textBox15.Text) || string.IsNullOrWhiteSpace(textBox16.Text) || string.IsNullOrWhiteSpace(textBox17.Text) || string.IsNullOrWhiteSpace(textBox18.Text))
+            {
+                MessageBox.Show("All fields are required!");
+                return;
+            }
+
             int id = int.Parse(textBox15.Text);
             string city = textBox16.Text;
             string address = textBox17.Text;
-
+          
             List<Gym> gyms = await gymController.GetAllGyms();
             Gym currentGym = gyms.FirstOrDefault(x => x.Id == id && x.City == city && x.Address == address);
             if (currentGym == null)
