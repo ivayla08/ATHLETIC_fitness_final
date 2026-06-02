@@ -127,8 +127,11 @@
   <data name="coach" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\coach.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="money" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\money.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="entrance2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\entrance2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="people" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\people.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gym1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gym1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,11 +139,11 @@
   <data name="rec" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rec.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="gym3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gym3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="people" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\people.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="money" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\money.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="class" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\class.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,10 +151,10 @@
   <data name="entrance" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\entrance.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="entrance2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\entrance2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gym3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gym3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mem.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

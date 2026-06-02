@@ -1,6 +1,7 @@
 ﻿using athelticFitness.Controllers;
 using athletic_fitness.Data.Entities;
 using athletic_fitness.Enums;
+using athleticFitness.Data.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,31 +41,44 @@ namespace ATHLETIC_fitness2
                 }
                 else
                 {
-                    UserController userController = new UserController();
-                    ClientController clientController = new ClientController();
-
-                    User newUser = new User
+                    try
                     {
-                        Username = textBox5.Text,
-                        Password = textBox6.Text,
-                        Role = RoleType.Client
-                    };
+                        UserController userController = new UserController();
+                        ClientController clientController = new ClientController();
 
-                    User createdUser = await userController.CreateUser(newUser);
+                        User newUser = new User
+                        {
+                            Username = textBox5.Text,
+                            Password = textBox6.Text,
+                            Role = RoleType.Client
+                        };
 
-                    Client newClient = new Client
+                        User createdUser = await userController.CreateUser(newUser);
+
+                        Client newClient = new Client
+                        {
+                            FirstName = textBox1.Text,
+                            LastName = textBox2.Text,
+                            Email = textBox4.Text,
+                            Phone = textBox3.Text,
+                            UserId = createdUser.Id
+                        };
+
+                        await clientController.CreateClient(newClient);
+
+                        MessageBox.Show("Registration successful!");
+                        Session.LoggedUser = createdUser;
+
+                        this.Hide();
+
+                        ClientForm clientForm = new ClientForm();
+                        clientForm.Show();
+                    }
+                    catch(Exception ex)
                     {
-                        FirstName = textBox1.Text,
-                        LastName = textBox2.Text,
-                        Email = textBox4.Text,
-                        Phone = textBox3.Text,
-                        UserId = createdUser.Id
-                    };
-
-                    await clientController.CreateClient(newClient);
-
-                    MessageBox.Show("Registration successful!");
-                    this.Close();
+                        MessageBox.Show(ex.Message);
+                    }
+               
                  
                 }                    
             }

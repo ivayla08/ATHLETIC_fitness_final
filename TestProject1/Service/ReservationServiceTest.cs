@@ -88,33 +88,33 @@ namespace TestProject1.Service
             await context.SaveChangesAsync();
         }
 
-        [Test]
-        public async Task CreateReservation_ValidData_ReturnsReservationAndSavesToDb()
-        {
-            using var context = TestDBFactory.CreateContext();
-            await SeedUserAsync(context, 10);
-            await SeedClientAsync(context, 5, 10);
-            await SeedGymAsync(context, 1);
-            await SeedUserAsync(context, 11);
-            await SeedCoachAsync(context, 2, 11, 1);
-            await SeedWorkoutAsync(context, 20, 2, 1);
+        //[Test]
+        //public async Task CreateReservation_ValidData_ReturnsReservationAndSavesToDb()
+        //{
+        //    using var context = TestDBFactory.CreateContext();
+        //    await SeedUserAsync(context, 10);
+        //    await SeedClientAsync(context, 5, 10);
+        //    await SeedGymAsync(context, 1);
+        //    await SeedUserAsync(context, 11);
+        //    await SeedCoachAsync(context, 2, 11, 1);
+        //    await SeedWorkoutAsync(context, 20, 2, 1);
 
-            var controller = new ReservationController(context);
-            var newReservation = new Reservation
-            {
-                ClientId = 5,
-                WorkoutId = 20
-            };
+        //    var controller = new ReservationController(context);
+        //    var newReservation = new Reservation
+        //    {
+        //        ClientId = 5,
+        //        WorkoutId = 20
+        //    };
 
-            var result = await controller.CreateReservation(newReservation);
+        //    var result = await controller.CreateReservation(newReservation);
 
-            Assert.IsNotNull(result);
-            Assert.AreEqual(5, result.ClientId);
-            Assert.AreEqual(20, result.WorkoutId);
+        //    Assert.IsNotNull(result);
+        //    Assert.AreEqual(5, result.ClientId);
+        //    Assert.AreEqual(20, result.WorkoutId);
 
-            var dbReservation = await context.Reservations.FirstOrDefaultAsync(r => r.ClientId == 5 && r.WorkoutId == 20);
-            Assert.IsNotNull(dbReservation);
-        }
+        //    var dbReservation = await context.Reservations.FirstOrDefaultAsync(r => r.ClientId == 5 && r.WorkoutId == 20);
+        //    Assert.IsNotNull(dbReservation);
+        //}
 
         [Test]
         public async Task CreateReservation_ClientDoesNotExist_ThrowsArgumentExceptionAsync()

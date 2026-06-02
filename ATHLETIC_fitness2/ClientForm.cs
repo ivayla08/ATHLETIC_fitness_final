@@ -50,7 +50,8 @@ namespace ATHLETIC_fitness2
             comboBox3.Items.Add("3 MONTH MEMBERSHIP €69.99");
             comboBox3.Items.Add("ONE-TIME WORKOUT €4.99");
 
-            comboBox4.DataSource = await reservationController.GetAllReservations(currentUser.Id);
+            List<Reservation> canCancel = await reservationController.GetAllReservations(currentUser.Id);
+            comboBox4.DataSource = canCancel.Where(x => x.Workout.DateTime > DateTime.Now).ToList();
             comboBox4.DisplayMember = "Info";
         }
 
@@ -166,7 +167,7 @@ namespace ATHLETIC_fitness2
 
         private async void button11_Click(object sender, EventArgs e)
         {
-            richTextBox1.Clear();
+            //richTextBox1.Clear();
             List<Reservation> myRes = await reservationController.GetAllReservations(currentUser.Id);
             foreach (var item in myRes)
             {
@@ -185,7 +186,7 @@ namespace ATHLETIC_fitness2
             {
                 if (item.Workout.DateTime < DateTime.Now)
                 {
-                    richTextBox1.AppendText($"{item.Workout.Name} on {item.Workout.DateTime} in {item.Workout.Gym.FullAddress}" + Environment.NewLine);
+                    richTextBox2.AppendText($"{item.Workout.Name} on {item.Workout.DateTime} in {item.Workout.Gym.FullAddress}" + Environment.NewLine);
                 }
 
             }

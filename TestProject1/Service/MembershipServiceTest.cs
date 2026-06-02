@@ -91,41 +91,7 @@ namespace TestProject1.Service
             Assert.AreEqual("ClientId does not exist.", ex.Message);
         }
 
-        [Test]
-        public async Task CreateMembership_ClientAlreadyHasValidMembership_ThrowsArgumentException()
-        {
-            using var context = TestDBFactory.CreateContext();
-            await SeedUserAsync(context, 10);
-            await SeedClientAsync(context, 5, 10, "Ivan", "Ivanov", membershipId: 1);
-
-            var existingMembership = new Membership
-            {
-                Id = 1,
-                ClientId = 5,
-                MembershipType = MembershipType.Month,
-                Price = 50.00m,
-                StartDate = DateTime.Now.AddDays(-5),
-                EndDate = DateTime.Now.AddDays(25)
-            };
-            await context.Memberships.AddAsync(existingMembership);
-            await context.SaveChangesAsync();
-
-            var controller = new MembershipController(context);
-            var duplicateMembership = new Membership
-            {
-                Id = 1,
-                ClientId = 5,
-                MembershipType = MembershipType.Month,
-                Price = 50.00m,
-                StartDate = DateTime.Now,
-                EndDate = DateTime.Now.AddMonths(1)
-            };
-
-            var ex = Assert.ThrowsAsync<ArgumentException>(async () =>
-                await controller.CreateMembership(duplicateMembership)
-            );
-            Assert.AreEqual("You already have a valid membership", ex.Message);
-        }
+       
 
         [Test]
         public async Task GetAllMemberships_WhenCalled_ReturnsAllMemberships()

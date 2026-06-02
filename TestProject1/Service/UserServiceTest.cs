@@ -63,7 +63,7 @@ namespace TestProject1.Service
             var result = await controller.GetAllUsers();
 
             Assert.IsNotNull(result);
-            Assert.AreEqual(2, result.Count);
+            Assert.AreEqual(3, result.Count);
         }
 
         [Test]

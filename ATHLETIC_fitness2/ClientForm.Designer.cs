@@ -46,6 +46,10 @@
             label2 = new Label();
             button4 = new Button();
             tabPage3 = new TabPage();
+            groupBox3 = new GroupBox();
+            label19 = new Label();
+            button20 = new Button();
+            comboBox4 = new ComboBox();
             button11 = new Button();
             richTextBox1 = new RichTextBox();
             button5 = new Button();
@@ -97,13 +101,12 @@
             button19 = new Button();
             button18 = new Button();
             richTextBox4 = new RichTextBox();
-            label19 = new Label();
-            comboBox4 = new ComboBox();
-            button20 = new Button();
+            pictureBox2 = new PictureBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
+            groupBox3.SuspendLayout();
             tabPage4.SuspendLayout();
             tabPage5.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -111,6 +114,7 @@
             tabPage7.SuspendLayout();
             groupBox2.SuspendLayout();
             tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -123,10 +127,11 @@
             tabControl1.Controls.Add(tabPage6);
             tabControl1.Controls.Add(tabPage7);
             tabControl1.Controls.Add(tabPage8);
-            tabControl1.Location = new Point(2, 2);
+            tabControl1.Location = new Point(1, 1);
+            tabControl1.Margin = new Padding(2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(2001, 1126);
+            tabControl1.Size = new Size(1334, 751);
             tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -140,10 +145,11 @@
             tabPage1.Controls.Add(button3);
             tabPage1.Controls.Add(button2);
             tabPage1.Controls.Add(button1);
-            tabPage1.Location = new Point(4, 39);
+            tabPage1.Location = new Point(4, 29);
+            tabPage1.Margin = new Padding(2);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1993, 1083);
+            tabPage1.Padding = new Padding(2);
+            tabPage1.Size = new Size(1326, 718);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Home";
             tabPage1.UseVisualStyleBackColor = true;
@@ -151,9 +157,10 @@
             // button17
             // 
             button17.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button17.Location = new Point(766, 254);
+            button17.Location = new Point(511, 169);
+            button17.Margin = new Padding(2);
             button17.Name = "button17";
-            button17.Size = new Size(306, 148);
+            button17.Size = new Size(204, 99);
             button17.TabIndex = 6;
             button17.Text = "My membership";
             button17.UseVisualStyleBackColor = true;
@@ -162,9 +169,10 @@
             // button13
             // 
             button13.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button13.Location = new Point(766, 447);
+            button13.Location = new Point(511, 298);
+            button13.Margin = new Padding(2);
             button13.Name = "button13";
-            button13.Size = new Size(306, 156);
+            button13.Size = new Size(204, 104);
             button13.TabIndex = 5;
             button13.Text = "Get membership";
             button13.UseVisualStyleBackColor = true;
@@ -173,9 +181,10 @@
             // button7
             // 
             button7.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button7.Location = new Point(1724, 48);
+            button7.Location = new Point(1112, 27);
+            button7.Margin = new Padding(2);
             button7.Name = "button7";
-            button7.Size = new Size(210, 148);
+            button7.Size = new Size(140, 99);
             button7.TabIndex = 4;
             button7.Text = "Edit profile";
             button7.UseVisualStyleBackColor = true;
@@ -185,17 +194,19 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label1.Location = new Point(502, 63);
+            label1.Location = new Point(335, 42);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(0, 41);
+            label1.Size = new Size(0, 34);
             label1.TabIndex = 3;
             // 
             // button3
             // 
             button3.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button3.Location = new Point(294, 666);
+            button3.Location = new Point(196, 444);
+            button3.Margin = new Padding(2);
             button3.Name = "button3";
-            button3.Size = new Size(322, 148);
+            button3.Size = new Size(215, 99);
             button3.TabIndex = 2;
             button3.Text = "Workout history";
             button3.UseVisualStyleBackColor = true;
@@ -204,9 +215,10 @@
             // button2
             // 
             button2.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button2.Location = new Point(294, 447);
+            button2.Location = new Point(196, 298);
+            button2.Margin = new Padding(2);
             button2.Name = "button2";
-            button2.Size = new Size(306, 148);
+            button2.Size = new Size(204, 99);
             button2.TabIndex = 1;
             button2.Text = "My reservations";
             button2.UseVisualStyleBackColor = true;
@@ -215,9 +227,10 @@
             // button1
             // 
             button1.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button1.Location = new Point(294, 254);
+            button1.Location = new Point(196, 169);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(306, 148);
+            button1.Size = new Size(204, 99);
             button1.TabIndex = 0;
             button1.Text = "Book";
             button1.UseVisualStyleBackColor = true;
@@ -234,10 +247,11 @@
             tabPage2.Controls.Add(comboBox1);
             tabPage2.Controls.Add(label2);
             tabPage2.Controls.Add(button4);
-            tabPage2.Location = new Point(4, 39);
+            tabPage2.Location = new Point(4, 29);
+            tabPage2.Margin = new Padding(2);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1993, 1083);
+            tabPage2.Padding = new Padding(2);
+            tabPage2.Size = new Size(1326, 718);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Book";
             // 
@@ -245,28 +259,29 @@
             // 
             comboBox2.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(981, 442);
-            comboBox2.Margin = new Padding(4);
+            comboBox2.Location = new Point(654, 295);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(484, 41);
+            comboBox2.Size = new Size(324, 34);
             comboBox2.TabIndex = 6;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label7.Location = new Point(534, 442);
+            label7.Location = new Point(356, 295);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(307, 41);
+            label7.Size = new Size(256, 34);
             label7.TabIndex = 5;
             label7.Text = "Upcoming workouts";
             // 
             // button8
             // 
             button8.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button8.Location = new Point(880, 622);
+            button8.Location = new Point(571, 366);
+            button8.Margin = new Padding(2);
             button8.Name = "button8";
-            button8.Size = new Size(248, 126);
+            button8.Size = new Size(165, 84);
             button8.TabIndex = 4;
             button8.Text = "Book";
             button8.UseVisualStyleBackColor = true;
@@ -276,27 +291,30 @@
             // 
             comboBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(981, 292);
+            comboBox1.Location = new Point(654, 195);
+            comboBox1.Margin = new Padding(2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(484, 35);
+            comboBox1.Size = new Size(324, 30);
             comboBox1.TabIndex = 3;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label2.Location = new Point(807, 292);
+            label2.Location = new Point(538, 195);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(87, 41);
+            label2.Size = new Size(74, 34);
             label2.TabIndex = 2;
             label2.Text = "Gym";
             // 
             // button4
             // 
             button4.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button4.Location = new Point(1742, 936);
+            button4.Location = new Point(1141, 582);
+            button4.Margin = new Padding(2);
             button4.Name = "button4";
-            button4.Size = new Size(189, 116);
+            button4.Size = new Size(126, 77);
             button4.TabIndex = 1;
             button4.Text = "Home";
             button4.UseVisualStyleBackColor = true;
@@ -307,24 +325,69 @@
             tabPage3.BackColor = SystemColors.GradientActiveCaption;
             tabPage3.BackgroundImage = Properties.Resources.gym1;
             tabPage3.BackgroundImageLayout = ImageLayout.Stretch;
-            tabPage3.Controls.Add(button20);
-            tabPage3.Controls.Add(comboBox4);
-            tabPage3.Controls.Add(label19);
+            tabPage3.Controls.Add(groupBox3);
             tabPage3.Controls.Add(button11);
             tabPage3.Controls.Add(richTextBox1);
             tabPage3.Controls.Add(button5);
-            tabPage3.Location = new Point(4, 39);
+            tabPage3.Location = new Point(4, 29);
+            tabPage3.Margin = new Padding(2);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1993, 1083);
+            tabPage3.Size = new Size(1326, 718);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "My reservations";
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(label19);
+            groupBox3.Controls.Add(button20);
+            groupBox3.Controls.Add(comboBox4);
+            groupBox3.Location = new Point(702, 143);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(463, 220);
+            groupBox3.TabIndex = 8;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Cancel";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label19.Location = new Point(105, 23);
+            label19.Margin = new Padding(2, 0, 2, 0);
+            label19.Name = "label19";
+            label19.Size = new Size(233, 34);
+            label19.TabIndex = 5;
+            label19.Text = "Cancel reservation";
+            // 
+            // button20
+            // 
+            button20.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            button20.Location = new Point(150, 119);
+            button20.Margin = new Padding(2);
+            button20.Name = "button20";
+            button20.Size = new Size(139, 70);
+            button20.TabIndex = 7;
+            button20.Text = "Cancel";
+            button20.UseVisualStyleBackColor = true;
+            button20.Click += button20_Click;
+            // 
+            // comboBox4
+            // 
+            comboBox4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(39, 76);
+            comboBox4.Margin = new Padding(2);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(397, 30);
+            comboBox4.TabIndex = 6;
             // 
             // button11
             // 
             button11.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button11.Location = new Point(507, 156);
+            button11.Location = new Point(226, 51);
+            button11.Margin = new Padding(2);
             button11.Name = "button11";
-            button11.Size = new Size(189, 116);
+            button11.Size = new Size(126, 77);
             button11.TabIndex = 4;
             button11.Text = "Show";
             button11.UseVisualStyleBackColor = true;
@@ -333,19 +396,19 @@
             // richTextBox1
             // 
             richTextBox1.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            richTextBox1.Location = new Point(83, 332);
-            richTextBox1.Margin = new Padding(4);
+            richTextBox1.Location = new Point(102, 143);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(1002, 594);
+            richTextBox1.Size = new Size(402, 489);
             richTextBox1.TabIndex = 3;
             richTextBox1.Text = "";
             // 
             // button5
             // 
             button5.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button5.Location = new Point(1720, 914);
+            button5.Location = new Point(1131, 582);
+            button5.Margin = new Padding(2);
             button5.Name = "button5";
-            button5.Size = new Size(189, 116);
+            button5.Size = new Size(126, 77);
             button5.TabIndex = 2;
             button5.Text = "Home";
             button5.UseVisualStyleBackColor = true;
@@ -359,28 +422,29 @@
             tabPage4.Controls.Add(richTextBox2);
             tabPage4.Controls.Add(button12);
             tabPage4.Controls.Add(button6);
-            tabPage4.Location = new Point(4, 39);
+            tabPage4.Location = new Point(4, 29);
+            tabPage4.Margin = new Padding(2);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(1993, 1083);
+            tabPage4.Size = new Size(1326, 718);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Workout history";
             // 
             // richTextBox2
             // 
             richTextBox2.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            richTextBox2.Location = new Point(414, 286);
-            richTextBox2.Margin = new Padding(4);
+            richTextBox2.Location = new Point(151, 176);
             richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(1158, 594);
+            richTextBox2.Size = new Size(986, 397);
             richTextBox2.TabIndex = 6;
             richTextBox2.Text = "";
             // 
             // button12
             // 
             button12.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button12.Location = new Point(890, 128);
+            button12.Location = new Point(549, 80);
+            button12.Margin = new Padding(2);
             button12.Name = "button12";
-            button12.Size = new Size(189, 116);
+            button12.Size = new Size(180, 77);
             button12.TabIndex = 5;
             button12.Text = "Show";
             button12.UseVisualStyleBackColor = true;
@@ -389,9 +453,10 @@
             // button6
             // 
             button6.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button6.Location = new Point(1706, 880);
+            button6.Location = new Point(1137, 587);
+            button6.Margin = new Padding(2);
             button6.Name = "button6";
-            button6.Size = new Size(189, 116);
+            button6.Size = new Size(126, 77);
             button6.TabIndex = 2;
             button6.Text = "Home";
             button6.UseVisualStyleBackColor = true;
@@ -402,10 +467,9 @@
             tabPage5.BackColor = SystemColors.GradientActiveCaption;
             tabPage5.Controls.Add(groupBox1);
             tabPage5.Controls.Add(button9);
-            tabPage5.Location = new Point(4, 39);
-            tabPage5.Margin = new Padding(4);
+            tabPage5.Location = new Point(4, 29);
             tabPage5.Name = "tabPage5";
-            tabPage5.Size = new Size(1993, 1083);
+            tabPage5.Size = new Size(1326, 718);
             tabPage5.TabIndex = 4;
             tabPage5.Text = "Edit profile";
             // 
@@ -429,11 +493,9 @@
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
-            groupBox1.Location = new Point(158, 102);
-            groupBox1.Margin = new Padding(4);
+            groupBox1.Location = new Point(105, 68);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4);
-            groupBox1.Size = new Size(1642, 765);
+            groupBox1.Size = new Size(1095, 510);
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             groupBox1.Text = "User Data";
@@ -441,47 +503,42 @@
             // textBox8
             // 
             textBox8.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox8.Location = new Point(1222, 398);
-            textBox8.Margin = new Padding(4);
+            textBox8.Location = new Point(815, 265);
             textBox8.Name = "textBox8";
-            textBox8.Size = new Size(310, 49);
+            textBox8.Size = new Size(208, 42);
             textBox8.TabIndex = 16;
             // 
             // textBox7
             // 
             textBox7.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox7.Location = new Point(1222, 306);
-            textBox7.Margin = new Padding(4);
+            textBox7.Location = new Point(815, 204);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(310, 49);
+            textBox7.Size = new Size(208, 42);
             textBox7.TabIndex = 15;
             // 
             // textBox6
             // 
             textBox6.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox6.Location = new Point(1222, 216);
-            textBox6.Margin = new Padding(4);
+            textBox6.Location = new Point(815, 144);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(310, 49);
+            textBox6.Size = new Size(208, 42);
             textBox6.TabIndex = 14;
             // 
             // textBox5
             // 
             textBox5.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(1222, 108);
-            textBox5.Margin = new Padding(4);
+            textBox5.Location = new Point(815, 72);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(310, 49);
+            textBox5.Size = new Size(208, 42);
             textBox5.TabIndex = 13;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(903, 410);
-            label11.Margin = new Padding(4, 0, 4, 0);
+            label11.Location = new Point(602, 273);
             label11.Name = "label11";
-            label11.Size = new Size(106, 41);
+            label11.Size = new Size(90, 34);
             label11.TabIndex = 12;
             label11.Text = "Phone";
             // 
@@ -489,10 +546,9 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(903, 310);
-            label10.Margin = new Padding(4, 0, 4, 0);
+            label10.Location = new Point(602, 207);
             label10.Name = "label10";
-            label10.Size = new Size(101, 41);
+            label10.Size = new Size(83, 34);
             label10.TabIndex = 11;
             label10.Text = "Email";
             // 
@@ -500,10 +556,9 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(903, 216);
-            label9.Margin = new Padding(4, 0, 4, 0);
+            label9.Location = new Point(602, 144);
             label9.Name = "label9";
-            label9.Size = new Size(164, 41);
+            label9.Size = new Size(137, 34);
             label9.TabIndex = 10;
             label9.Text = "Last name";
             // 
@@ -511,20 +566,18 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(903, 108);
-            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Location = new Point(602, 72);
             label8.Name = "label8";
-            label8.Size = new Size(166, 41);
+            label8.Size = new Size(140, 34);
             label8.TabIndex = 9;
             label8.Text = "First name";
             // 
             // button10
             // 
             button10.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button10.Location = new Point(722, 531);
-            button10.Margin = new Padding(4);
+            button10.Location = new Point(481, 354);
             button10.Name = "button10";
-            button10.Size = new Size(267, 164);
+            button10.Size = new Size(178, 109);
             button10.TabIndex = 8;
             button10.Text = "Save";
             button10.UseVisualStyleBackColor = true;
@@ -533,47 +586,42 @@
             // textBox4
             // 
             textBox4.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(490, 398);
-            textBox4.Margin = new Padding(4);
+            textBox4.Location = new Point(327, 265);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(310, 49);
+            textBox4.Size = new Size(208, 42);
             textBox4.TabIndex = 7;
             // 
             // textBox3
             // 
             textBox3.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(490, 298);
-            textBox3.Margin = new Padding(4);
+            textBox3.Location = new Point(327, 199);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(310, 49);
+            textBox3.Size = new Size(208, 42);
             textBox3.TabIndex = 6;
             // 
             // textBox2
             // 
             textBox2.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(490, 204);
-            textBox2.Margin = new Padding(4);
+            textBox2.Location = new Point(327, 136);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(310, 49);
+            textBox2.Size = new Size(208, 42);
             textBox2.TabIndex = 5;
             // 
             // textBox1
             // 
             textBox1.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(490, 108);
-            textBox1.Margin = new Padding(4);
+            textBox1.Location = new Point(327, 72);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(310, 49);
+            textBox1.Size = new Size(208, 42);
             textBox1.TabIndex = 4;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(46, 298);
-            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Location = new Point(31, 199);
             label6.Name = "label6";
-            label6.Size = new Size(249, 41);
+            label6.Size = new Size(205, 34);
             label6.TabIndex = 3;
             label6.Text = "New passoword";
             // 
@@ -581,10 +629,9 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(46, 402);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Location = new Point(31, 268);
             label5.Name = "label5";
-            label5.Size = new Size(330, 41);
+            label5.Size = new Size(273, 34);
             label5.TabIndex = 2;
             label5.Text = "Repeat new password";
             // 
@@ -592,10 +639,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(46, 204);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(31, 136);
             label4.Name = "label4";
-            label4.Size = new Size(156, 41);
+            label4.Size = new Size(128, 34);
             label4.TabIndex = 1;
             label4.Text = "Password";
             // 
@@ -603,19 +649,19 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(46, 108);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(31, 72);
             label3.Name = "label3";
-            label3.Size = new Size(160, 41);
+            label3.Size = new Size(135, 34);
             label3.TabIndex = 0;
             label3.Text = "Username";
             // 
             // button9
             // 
             button9.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button9.Location = new Point(1748, 918);
+            button9.Location = new Point(1141, 582);
+            button9.Margin = new Padding(2);
             button9.Name = "button9";
-            button9.Size = new Size(189, 116);
+            button9.Size = new Size(126, 77);
             button9.TabIndex = 3;
             button9.Text = "Home";
             button9.UseVisualStyleBackColor = true;
@@ -631,39 +677,35 @@
             tabPage6.Controls.Add(label12);
             tabPage6.Controls.Add(comboBox3);
             tabPage6.Controls.Add(button14);
-            tabPage6.Location = new Point(4, 39);
-            tabPage6.Margin = new Padding(4);
+            tabPage6.Location = new Point(4, 29);
             tabPage6.Name = "tabPage6";
-            tabPage6.Size = new Size(1993, 1083);
+            tabPage6.Size = new Size(1326, 718);
             tabPage6.TabIndex = 5;
             tabPage6.Text = "Get membership";
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(1038, 183);
-            dateTimePicker1.Margin = new Padding(4);
+            dateTimePicker1.Location = new Point(692, 122);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(373, 37);
+            dateTimePicker1.Size = new Size(250, 27);
             dateTimePicker1.TabIndex = 8;
             // 
             // label18
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label18.Location = new Point(538, 183);
-            label18.Margin = new Padding(4, 0, 4, 0);
+            label18.Location = new Point(359, 122);
             label18.Name = "label18";
-            label18.Size = new Size(172, 41);
+            label18.Size = new Size(143, 34);
             label18.TabIndex = 7;
             label18.Text = "Start Date:";
             // 
             // button15
             // 
             button15.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button15.Location = new Point(834, 878);
-            button15.Margin = new Padding(4);
+            button15.Location = new Point(556, 585);
             button15.Name = "button15";
-            button15.Size = new Size(222, 130);
+            button15.Size = new Size(148, 87);
             button15.TabIndex = 6;
             button15.Text = "Get";
             button15.UseVisualStyleBackColor = true;
@@ -672,10 +714,9 @@
             // richTextBox3
             // 
             richTextBox3.Font = new Font("Times New Roman", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            richTextBox3.Location = new Point(538, 268);
-            richTextBox3.Margin = new Padding(4);
+            richTextBox3.Location = new Point(359, 179);
             richTextBox3.Name = "richTextBox3";
-            richTextBox3.Size = new Size(872, 558);
+            richTextBox3.Size = new Size(583, 373);
             richTextBox3.TabIndex = 5;
             richTextBox3.Text = "";
             // 
@@ -683,10 +724,9 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.Location = new Point(538, 94);
-            label12.Margin = new Padding(4, 0, 4, 0);
+            label12.Location = new Point(359, 63);
             label12.Name = "label12";
-            label12.Size = new Size(267, 41);
+            label12.Size = new Size(222, 34);
             label12.TabIndex = 4;
             label12.Text = "Membership type";
             // 
@@ -694,19 +734,19 @@
             // 
             comboBox3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(946, 94);
-            comboBox3.Margin = new Padding(4);
+            comboBox3.Location = new Point(631, 63);
             comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(464, 35);
+            comboBox3.Size = new Size(311, 30);
             comboBox3.TabIndex = 3;
             comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
             // 
             // button14
             // 
             button14.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button14.Location = new Point(1732, 910);
+            button14.Location = new Point(1141, 582);
+            button14.Margin = new Padding(2);
             button14.Name = "button14";
-            button14.Size = new Size(189, 116);
+            button14.Size = new Size(126, 77);
             button14.TabIndex = 2;
             button14.Text = "Home";
             button14.UseVisualStyleBackColor = true;
@@ -718,21 +758,19 @@
             tabPage7.BackgroundImage = (Image)resources.GetObject("tabPage7.BackgroundImage");
             tabPage7.Controls.Add(button16);
             tabPage7.Controls.Add(groupBox2);
-            tabPage7.Location = new Point(4, 39);
-            tabPage7.Margin = new Padding(4);
+            tabPage7.Location = new Point(4, 29);
             tabPage7.Name = "tabPage7";
-            tabPage7.Size = new Size(1993, 1083);
+            tabPage7.Size = new Size(1326, 718);
             tabPage7.TabIndex = 6;
             tabPage7.Text = "Payment";
             // 
             // button16
             // 
-            button16.BackColor = SystemColors.GradientActiveCaption;
+            button16.BackColor = SystemColors.ControlDark;
             button16.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button16.Location = new Point(873, 789);
-            button16.Margin = new Padding(4);
+            button16.Location = new Point(582, 526);
             button16.Name = "button16";
-            button16.Size = new Size(206, 100);
+            button16.Size = new Size(137, 67);
             button16.TabIndex = 9;
             button16.Text = "Pay";
             button16.UseVisualStyleBackColor = false;
@@ -740,7 +778,7 @@
             // 
             // groupBox2
             // 
-            groupBox2.BackColor = SystemColors.GradientActiveCaption;
+            groupBox2.BackColor = SystemColors.ControlDarkDark;
             groupBox2.Controls.Add(textBox12);
             groupBox2.Controls.Add(textBox11);
             groupBox2.Controls.Add(textBox10);
@@ -750,11 +788,9 @@
             groupBox2.Controls.Add(label15);
             groupBox2.Controls.Add(label14);
             groupBox2.Controls.Add(label13);
-            groupBox2.Location = new Point(576, 224);
-            groupBox2.Margin = new Padding(4);
+            groupBox2.Location = new Point(384, 149);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(4);
-            groupBox2.Size = new Size(862, 528);
+            groupBox2.Size = new Size(575, 352);
             groupBox2.TabIndex = 0;
             groupBox2.TabStop = false;
             groupBox2.Text = "Card info";
@@ -762,47 +798,42 @@
             // textBox12
             // 
             textBox12.Font = new Font("Times New Roman", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox12.Location = new Point(387, 414);
-            textBox12.Margin = new Padding(4);
+            textBox12.Location = new Point(258, 276);
             textBox12.Name = "textBox12";
-            textBox12.Size = new Size(382, 45);
+            textBox12.Size = new Size(256, 39);
             textBox12.TabIndex = 8;
             // 
             // textBox11
             // 
             textBox11.Font = new Font("Times New Roman", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox11.Location = new Point(387, 300);
-            textBox11.Margin = new Padding(4);
+            textBox11.Location = new Point(258, 200);
             textBox11.Name = "textBox11";
-            textBox11.Size = new Size(382, 45);
+            textBox11.Size = new Size(256, 39);
             textBox11.TabIndex = 7;
             // 
             // textBox10
             // 
             textBox10.Font = new Font("Times New Roman", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox10.Location = new Point(387, 190);
-            textBox10.Margin = new Padding(4);
+            textBox10.Location = new Point(258, 127);
             textBox10.Name = "textBox10";
-            textBox10.Size = new Size(382, 45);
+            textBox10.Size = new Size(256, 39);
             textBox10.TabIndex = 6;
             // 
             // textBox9
             // 
             textBox9.Font = new Font("Times New Roman", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox9.Location = new Point(387, 78);
-            textBox9.Margin = new Padding(4);
+            textBox9.Location = new Point(258, 52);
             textBox9.Name = "textBox9";
-            textBox9.Size = new Size(382, 45);
+            textBox9.Size = new Size(256, 39);
             textBox9.TabIndex = 5;
             // 
             // label17
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label17.Location = new Point(39, 399);
-            label17.Margin = new Padding(4, 0, 4, 0);
+            label17.Location = new Point(26, 266);
             label17.Name = "label17";
-            label17.Size = new Size(144, 41);
+            label17.Size = new Size(119, 34);
             label17.TabIndex = 4;
             label17.Text = "MM/YY";
             // 
@@ -810,20 +841,18 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label16.Location = new Point(39, 399);
-            label16.Margin = new Padding(4, 0, 4, 0);
+            label16.Location = new Point(26, 266);
             label16.Name = "label16";
-            label16.Size = new Size(0, 41);
+            label16.Size = new Size(0, 34);
             label16.TabIndex = 3;
             // 
             // label15
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label15.Location = new Point(39, 300);
-            label15.Margin = new Padding(4, 0, 4, 0);
+            label15.Location = new Point(26, 200);
             label15.Name = "label15";
-            label15.Size = new Size(92, 41);
+            label15.Size = new Size(77, 34);
             label15.TabIndex = 2;
             label15.Text = "CVC";
             // 
@@ -831,10 +860,9 @@
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label14.Location = new Point(39, 198);
-            label14.Margin = new Padding(4, 0, 4, 0);
+            label14.Location = new Point(26, 132);
             label14.Name = "label14";
-            label14.Size = new Size(202, 41);
+            label14.Size = new Size(172, 34);
             label14.TabIndex = 1;
             label14.Text = "Card number";
             // 
@@ -842,32 +870,33 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.Location = new Point(39, 86);
-            label13.Margin = new Padding(4, 0, 4, 0);
+            label13.Location = new Point(26, 57);
             label13.Name = "label13";
-            label13.Size = new Size(103, 41);
+            label13.Size = new Size(86, 34);
             label13.TabIndex = 0;
             label13.Text = "Name";
             // 
             // tabPage8
             // 
             tabPage8.BackColor = SystemColors.GradientActiveCaption;
+            tabPage8.BackgroundImageLayout = ImageLayout.Stretch;
             tabPage8.Controls.Add(button19);
-            tabPage8.Controls.Add(button18);
             tabPage8.Controls.Add(richTextBox4);
-            tabPage8.Location = new Point(4, 39);
-            tabPage8.Margin = new Padding(4);
+            tabPage8.Controls.Add(button18);
+            tabPage8.Controls.Add(pictureBox2);
+            tabPage8.Location = new Point(4, 29);
             tabPage8.Name = "tabPage8";
-            tabPage8.Size = new Size(1993, 1083);
+            tabPage8.Size = new Size(1326, 718);
             tabPage8.TabIndex = 7;
             tabPage8.Text = "My membership";
             // 
             // button19
             // 
             button19.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button19.Location = new Point(843, 110);
+            button19.Location = new Point(38, 389);
+            button19.Margin = new Padding(2);
             button19.Name = "button19";
-            button19.Size = new Size(310, 115);
+            button19.Size = new Size(207, 77);
             button19.TabIndex = 4;
             button19.Text = "Membership";
             button19.UseVisualStyleBackColor = true;
@@ -876,9 +905,10 @@
             // button18
             // 
             button18.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button18.Location = new Point(1755, 918);
+            button18.Location = new Point(1130, 582);
+            button18.Margin = new Padding(2);
             button18.Name = "button18";
-            button18.Size = new Size(189, 116);
+            button18.Size = new Size(126, 77);
             button18.TabIndex = 3;
             button18.Text = "Home";
             button18.UseVisualStyleBackColor = true;
@@ -887,49 +917,29 @@
             // richTextBox4
             // 
             richTextBox4.Font = new Font("Times New Roman", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            richTextBox4.Location = new Point(530, 254);
-            richTextBox4.Margin = new Padding(4);
+            richTextBox4.Location = new Point(313, 389);
             richTextBox4.Name = "richTextBox4";
-            richTextBox4.Size = new Size(908, 553);
+            richTextBox4.Size = new Size(632, 254);
             richTextBox4.TabIndex = 0;
             richTextBox4.Text = "";
             // 
-            // label19
+            // pictureBox2
             // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label19.Location = new Point(1408, 493);
-            label19.Name = "label19";
-            label19.Size = new Size(280, 41);
-            label19.TabIndex = 5;
-            label19.Text = "Cancel reservation";
-            // 
-            // comboBox4
-            // 
-            comboBox4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(1243, 571);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(593, 35);
-            comboBox4.TabIndex = 6;
-            // 
-            // button20
-            // 
-            button20.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button20.Location = new Point(1438, 643);
-            button20.Name = "button20";
-            button20.Size = new Size(209, 105);
-            button20.TabIndex = 7;
-            button20.Text = "Cancel";
-            button20.UseVisualStyleBackColor = true;
-            button20.Click += button20_Click;
+            pictureBox2.Image = Properties.Resources.mem;
+            pictureBox2.Location = new Point(-17, -18);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(1313, 695);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 6;
+            pictureBox2.TabStop = false;
             // 
             // ClientForm
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1924, 1050);
+            ClientSize = new Size(1283, 700);
             Controls.Add(tabControl1);
+            Margin = new Padding(2);
             Name = "ClientForm";
             Text = "ClientForm";
             FormClosed += ClientForm_FormClosed;
@@ -939,7 +949,8 @@
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             tabPage3.ResumeLayout(false);
-            tabPage3.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             tabPage4.ResumeLayout(false);
             tabPage5.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
@@ -950,6 +961,7 @@
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             tabPage8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -1026,5 +1038,7 @@
         private Button button20;
         private ComboBox comboBox4;
         private Label label19;
+        private GroupBox groupBox3;
+        private PictureBox pictureBox2;
     }
 }

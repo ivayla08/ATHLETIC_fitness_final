@@ -29,7 +29,11 @@ namespace athelticFitness.Controllers
             {
                 throw new ArgumentException("UserId does not exist.");
             }
-
+            bool emailExists = await context.Clients.AnyAsync(x=> x.Email == client.Email);
+            if (emailExists) 
+            {
+                throw new ArgumentException("This email is already taken. ");
+            }
             await context.Clients.AddAsync(client);
             await context.SaveChangesAsync();
             return client;
