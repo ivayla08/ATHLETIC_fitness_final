@@ -99,9 +99,10 @@
             label13 = new Label();
             tabPage8 = new TabPage();
             button19 = new Button();
-            button18 = new Button();
             richTextBox4 = new RichTextBox();
+            button18 = new Button();
             pictureBox2 = new PictureBox();
+            button21 = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -138,6 +139,7 @@
             // 
             tabPage1.BackgroundImage = Properties.Resources.gym3;
             tabPage1.BackgroundImageLayout = ImageLayout.Stretch;
+            tabPage1.Controls.Add(button21);
             tabPage1.Controls.Add(button17);
             tabPage1.Controls.Add(button13);
             tabPage1.Controls.Add(button7);
@@ -902,6 +904,15 @@
             button19.UseVisualStyleBackColor = true;
             button19.Click += button19_Click;
             // 
+            // richTextBox4
+            // 
+            richTextBox4.Font = new Font("Times New Roman", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            richTextBox4.Location = new Point(313, 389);
+            richTextBox4.Name = "richTextBox4";
+            richTextBox4.Size = new Size(632, 254);
+            richTextBox4.TabIndex = 0;
+            richTextBox4.Text = "";
+            // 
             // button18
             // 
             button18.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -914,15 +925,6 @@
             button18.UseVisualStyleBackColor = true;
             button18.Click += button18_Click;
             // 
-            // richTextBox4
-            // 
-            richTextBox4.Font = new Font("Times New Roman", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            richTextBox4.Location = new Point(313, 389);
-            richTextBox4.Name = "richTextBox4";
-            richTextBox4.Size = new Size(632, 254);
-            richTextBox4.TabIndex = 0;
-            richTextBox4.Text = "";
-            // 
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.mem;
@@ -932,6 +934,18 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 6;
             pictureBox2.TabStop = false;
+            // 
+            // button21
+            // 
+            button21.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            button21.Location = new Point(1112, 540);
+            button21.Margin = new Padding(2);
+            button21.Name = "button21";
+            button21.Size = new Size(140, 99);
+            button21.TabIndex = 7;
+            button21.Text = "Exit";
+            button21.UseVisualStyleBackColor = true;
+            button21.Click += button21_Click;
             // 
             // ClientForm
             // 
@@ -1040,5 +1054,6 @@
         private Label label19;
         private GroupBox groupBox3;
         private PictureBox pictureBox2;
+        private Button button21;
     }
 }

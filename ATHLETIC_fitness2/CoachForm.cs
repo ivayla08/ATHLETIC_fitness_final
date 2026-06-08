@@ -71,20 +71,20 @@ namespace ATHLETIC_fitness2
                 MessageBox.Show("Invalid phone");
                 return;
             }
-            int userId = Session.LoggedUser.Id;          
-            CoachController controller = new CoachController();           
-            Coach currentCoach=await controller.GetCoachByUserId(userId);
-            if (currentCoach == null) 
+            int userId = Session.LoggedUser.Id;
+            CoachController controller = new CoachController();
+            Coach currentCoach = await controller.GetCoachByUserId(userId);
+            if (currentCoach == null)
             {
                 MessageBox.Show("Something went wrong!");
             }
             else
             {
                 currentCoach.FirstName = textBox1.Text;
-                currentCoach.LastName= textBox2.Text;
+                currentCoach.LastName = textBox2.Text;
                 currentCoach.Email = textBox4.Text;
-                currentCoach.Phone= textBox3.Text;
-                bool result= await controller.UpdateCoach(currentCoach);
+                currentCoach.Phone = textBox3.Text;
+                bool result = await controller.UpdateCoach(currentCoach);
                 if (result)
                 {
                     MessageBox.Show("Coach updated");
@@ -94,6 +94,13 @@ namespace ATHLETIC_fitness2
                     MessageBox.Show("Cannot update coach");
                 }
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            form.Show();
+            this.Hide();
         }
     }
 }

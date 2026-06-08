@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            button28 = new Button();
             button1 = new Button();
             button21 = new Button();
             button10 = new Button();
@@ -103,6 +104,8 @@
             tabPage6 = new TabPage();
             button22 = new Button();
             groupBox3 = new GroupBox();
+            label30 = new Label();
+            dateTimePicker1 = new DateTimePicker();
             button12 = new Button();
             comboBox4 = new ComboBox();
             comboBox3 = new ComboBox();
@@ -170,6 +173,7 @@
             // 
             tabPage1.BackgroundImage = Properties.Resources.rec;
             tabPage1.BackgroundImageLayout = ImageLayout.Stretch;
+            tabPage1.Controls.Add(button28);
             tabPage1.Controls.Add(button1);
             tabPage1.Controls.Add(button21);
             tabPage1.Controls.Add(button10);
@@ -186,6 +190,19 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Home";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button28
+            // 
+            button28.BackColor = SystemColors.GradientActiveCaption;
+            button28.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            button28.Location = new Point(965, 541);
+            button28.Margin = new Padding(2);
+            button28.Name = "button28";
+            button28.Size = new Size(221, 106);
+            button28.TabIndex = 7;
+            button28.Text = "Exit";
+            button28.UseVisualStyleBackColor = false;
+            button28.Click += button28_Click;
             // 
             // button1
             // 
@@ -937,6 +954,7 @@
             // 
             // richTextBox2
             // 
+            richTextBox2.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             richTextBox2.Location = new Point(97, 153);
             richTextBox2.Name = "richTextBox2";
             richTextBox2.Size = new Size(444, 464);
@@ -1014,6 +1032,8 @@
             // groupBox3
             // 
             groupBox3.BackColor = SystemColors.GradientInactiveCaption;
+            groupBox3.Controls.Add(label30);
+            groupBox3.Controls.Add(dateTimePicker1);
             groupBox3.Controls.Add(button12);
             groupBox3.Controls.Add(comboBox4);
             groupBox3.Controls.Add(comboBox3);
@@ -1029,19 +1049,38 @@
             groupBox3.Controls.Add(label10);
             groupBox3.Controls.Add(label9);
             groupBox3.Controls.Add(label8);
-            groupBox3.Location = new Point(50, 70);
+            groupBox3.Location = new Point(47, 37);
             groupBox3.Margin = new Padding(2);
             groupBox3.Name = "groupBox3";
             groupBox3.Padding = new Padding(2);
-            groupBox3.Size = new Size(580, 504);
+            groupBox3.Size = new Size(593, 618);
             groupBox3.TabIndex = 1;
             groupBox3.TabStop = false;
             groupBox3.Text = "Add Workout";
             // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label30.Location = new Point(23, 90);
+            label30.Margin = new Padding(2, 0, 2, 0);
+            label30.Name = "label30";
+            label30.Size = new Size(71, 34);
+            label30.TabIndex = 17;
+            label30.Text = "Date";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePicker1.Location = new Point(277, 94);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(269, 30);
+            dateTimePicker1.TabIndex = 16;
+            // 
             // button12
             // 
             button12.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button12.Location = new Point(192, 416);
+            button12.Location = new Point(200, 493);
             button12.Margin = new Padding(2);
             button12.Name = "button12";
             button12.Size = new Size(150, 74);
@@ -1054,7 +1093,7 @@
             // 
             comboBox4.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(277, 353);
+            comboBox4.Location = new Point(277, 418);
             comboBox4.Margin = new Padding(2);
             comboBox4.Name = "comboBox4";
             comboBox4.Size = new Size(269, 42);
@@ -1064,7 +1103,7 @@
             // 
             comboBox3.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(277, 296);
+            comboBox3.Location = new Point(277, 364);
             comboBox3.Margin = new Padding(2);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(269, 42);
@@ -1074,7 +1113,7 @@
             // 
             comboBox2.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(277, 238);
+            comboBox2.Location = new Point(277, 301);
             comboBox2.Margin = new Padding(2);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(269, 42);
@@ -1083,7 +1122,7 @@
             // textBox9
             // 
             textBox9.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox9.Location = new Point(277, 181);
+            textBox9.Location = new Point(277, 242);
             textBox9.Margin = new Padding(2);
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(269, 42);
@@ -1092,7 +1131,7 @@
             // textBox8
             // 
             textBox8.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox8.Location = new Point(277, 128);
+            textBox8.Location = new Point(277, 183);
             textBox8.Margin = new Padding(2);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(269, 42);
@@ -1101,7 +1140,7 @@
             // textBox7
             // 
             textBox7.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox7.Location = new Point(277, 79);
+            textBox7.Location = new Point(277, 134);
             textBox7.Margin = new Padding(2);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(269, 42);
@@ -1120,7 +1159,7 @@
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label14.Location = new Point(29, 353);
+            label14.Location = new Point(23, 418);
             label14.Margin = new Padding(2, 0, 2, 0);
             label14.Name = "label14";
             label14.Size = new Size(91, 34);
@@ -1131,7 +1170,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label13.Location = new Point(29, 296);
+            label13.Location = new Point(29, 356);
             label13.Margin = new Padding(2, 0, 2, 0);
             label13.Name = "label13";
             label13.Size = new Size(74, 34);
@@ -1142,7 +1181,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label12.Location = new Point(29, 238);
+            label12.Location = new Point(23, 309);
             label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
             label12.Size = new Size(80, 34);
@@ -1153,7 +1192,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label11.Location = new Point(23, 182);
+            label11.Location = new Point(23, 250);
             label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
             label11.Size = new Size(118, 34);
@@ -1164,7 +1203,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label10.Location = new Point(23, 136);
+            label10.Location = new Point(23, 191);
             label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
             label10.Size = new Size(250, 34);
@@ -1175,12 +1214,12 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label9.Location = new Point(23, 90);
+            label9.Location = new Point(18, 137);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
-            label9.Size = new Size(139, 34);
+            label9.Size = new Size(76, 34);
             label9.TabIndex = 2;
-            label9.Text = "Date Time";
+            label9.Text = "Time";
             // 
             // label8
             // 
@@ -1498,5 +1537,8 @@
         private Button button26;
         private Label label29;
         private ComboBox comboBox9;
+        private Label label30;
+        private DateTimePicker dateTimePicker1;
+        private Button button28;
     }
 }

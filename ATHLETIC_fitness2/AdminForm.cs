@@ -103,36 +103,43 @@ namespace ATHLETIC_fitness2
             string username = textBox1.Text;
             string password = textBox2.Text;
 
-            if(string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text) || string.IsNullOrWhiteSpace(textBox3.Text) || comboBox1.SelectedItem == null)
+            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text) || string.IsNullOrWhiteSpace(textBox3.Text) || comboBox1.SelectedItem == null)
             {
                 MessageBox.Show("All fields are required!");
                 return;
             }
 
-            if (comboBox1.SelectedItem.ToString() == RoleType.Admin.ToString())
+            try
             {
-                User user = new User
+                if (comboBox1.SelectedItem.ToString() == RoleType.Admin.ToString())
                 {
-                    Username = username,
-                    Password = password,
-                    Role = RoleType.Admin
-                };
+                    User user = new User
+                    {
+                        Username = username,
+                        Password = password,
+                        Role = RoleType.Admin
+                    };
 
-                await userController.CreateUser(user);
-                MessageBox.Show("Admin added");
+                    await userController.CreateUser(user);
+                    MessageBox.Show("Admin added");
+                }
+                else if (comboBox1.SelectedItem.ToString() == RoleType.Coach.ToString())
+                {
+                    User user = new User
+                    {
+                        Username = username,
+                        Password = password,
+                        Role = RoleType.Coach
+                    };
+
+                    await userController.CreateUser(user);
+                    CoachRegistration form = new CoachRegistration(user);
+                    MessageBox.Show("Coach added");
+                }
             }
-            else if (comboBox1.SelectedItem.ToString() == RoleType.Coach.ToString())
+            catch (Exception ex)
             {
-                User user = new User
-                {
-                    Username = username,
-                    Password = password,
-                    Role = RoleType.Coach
-                };
-
-                await userController.CreateUser(user);
-                CoachRegistration form = new CoachRegistration(user);
-                MessageBox.Show("Coach added");
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -148,7 +155,7 @@ namespace ATHLETIC_fitness2
             string city = textBox4.Text;
             string address = textBox5.Text;
             if (string.IsNullOrWhiteSpace(textBox4.Text) || string.IsNullOrWhiteSpace(textBox5.Text))
-            {            
+            {
                 MessageBox.Show("All fields are required!");
                 return;
             }
@@ -169,9 +176,9 @@ namespace ATHLETIC_fitness2
                 return;
             }
 
-            if (!DateTime.TryParse(textBox7.Text, out DateTime date))
+            if (string.IsNullOrWhiteSpace(textBox6.Text))
             {
-                MessageBox.Show("Invalid date and time format.");
+                MessageBox.Show("Enter time for the workout.");
                 return;
             }
 
@@ -196,7 +203,19 @@ namespace ATHLETIC_fitness2
             LevelType level = (LevelType)comboBox2.SelectedItem;
             Gym gym = (Gym)comboBox3.SelectedItem;
             Coach coach = (Coach)comboBox4.SelectedItem;
+            DateTime date = dateTimePicker1.Value.Date;
 
+
+            if (TimeSpan.TryParse(textBox7.Text, out TimeSpan timeOfDay))
+            {
+
+                date = date.Add(timeOfDay);
+            }
+            else
+            {
+                MessageBox.Show("Enter valid time format hh:mm");
+                return;
+            }
             Workout workout = new Workout
             {
                 Name = textBox6.Text,
@@ -380,7 +399,7 @@ namespace ATHLETIC_fitness2
             int id = int.Parse(textBox10.Text);
             string username = textBox11.Text;
             string password = textBox12.Text;
-            string newPass = textBox13.Text;            
+            string newPass = textBox13.Text;
 
             List<User> users = await userController.GetAllUsers();
             User currentUser = users.FirstOrDefault(x => x.Username == username && x.Id == id && x.Password == password);
@@ -417,7 +436,7 @@ namespace ATHLETIC_fitness2
             int id = int.Parse(textBox15.Text);
             string city = textBox16.Text;
             string address = textBox17.Text;
-          
+
             List<Gym> gyms = await gymController.GetAllGyms();
             Gym currentGym = gyms.FirstOrDefault(x => x.Id == id && x.City == city && x.Address == address);
             if (currentGym == null)
@@ -441,12 +460,20 @@ namespace ATHLETIC_fitness2
 
         private async void button26_Click(object sender, EventArgs e)
         {
-            richTextBox2.Clear();
             List<Client> clients = await clientController.GetAllClients();
-            List<Client> topTen = clients.OrderByDescending(x => x.Reservations.Count).Take(10).ToList();
-            for (int i = 1; i < topTen.Count; i++)
+            richTextBox2.Clear();
+            if (clients.Count == 0)
             {
-                richTextBox2.AppendText($"{i} - {topTen[i].FirstName} {topTen[i].LastName} Workouts: {topTen[i].Reservations.Count}" + Environment.NewLine);
+                richTextBox2.AppendText("No clients");
+            }
+            else
+            {
+                
+                List<Client> topTen = clients.OrderByDescending(x => x.Reservations.Count).Take(10).ToList();
+                for (int i = 1; i < topTen.Count; i++)
+                {
+                    richTextBox2.AppendText($"{i} - {topTen[i].FirstName} {topTen[i].LastName} Workouts: {topTen[i].Reservations.Count}" + Environment.NewLine);
+                }
             }
 
         }
@@ -456,17 +483,28 @@ namespace ATHLETIC_fitness2
             richTextBox2.Clear();
             if (comboBox9.SelectedItem == null)
             {
-                List<Coach> coaches = await coachController.GetAllCoaches();
-                List<Coach> topTen = coaches.OrderByDescending(x => x.Workouts.Count).Take(10).ToList();
-                for (int i = 0; i < topTen.Count; i++)
+                if (coachController.GetAllCoaches().Result.Count == 0)
                 {
-                    richTextBox2.AppendText($"{i} - {topTen[i].FirstName} {topTen[i].LastName} {topTen[i].Gym.FullAddress}" + Environment.NewLine);
+                    richTextBox2.AppendText("No coaches");
+                }
+                else
+                {
+                    List<Coach> coaches = await coachController.GetAllCoaches();
+                    List<Coach> topTen = coaches.OrderByDescending(x => x.Workouts.Count).Take(10).ToList();
+                    for (int i = 0; i < topTen.Count; i++)
+                    {
+                        richTextBox2.AppendText($"{i} - {topTen[i].FirstName} {topTen[i].LastName} {topTen[i].Gym.FullAddress}" + Environment.NewLine);
+                    }
                 }
             }
             else
             {
                 Gym gym = (Gym)comboBox9.SelectedItem;
                 List<Coach> coaches = await coachController.GetAllCoaches();
+                if (coaches.Count == 0)
+                {
+                    richTextBox2.AppendText("No coaches");
+                }
                 List<Coach> topTen = coaches.Where(x => x.GymId == gym.Id).OrderByDescending(x => x.Workouts.Count).Take(10).ToList();
                 for (int i = 0; i < topTen.Count; i++)
                 {
@@ -494,6 +532,13 @@ namespace ATHLETIC_fitness2
         private void button7_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 0;
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
     }
 }

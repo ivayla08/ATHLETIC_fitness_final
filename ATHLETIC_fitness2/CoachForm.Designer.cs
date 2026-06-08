@@ -30,6 +30,7 @@
         {
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            button4 = new Button();
             label2 = new Label();
             button2 = new Button();
             richTextBox1 = new RichTextBox();
@@ -47,8 +48,8 @@
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             pictureBox1 = new PictureBox();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -69,6 +70,7 @@
             // tabPage1
             // 
             tabPage1.BackgroundImage = Properties.Resources._class;
+            tabPage1.Controls.Add(button4);
             tabPage1.Controls.Add(label2);
             tabPage1.Controls.Add(button2);
             tabPage1.Controls.Add(richTextBox1);
@@ -82,6 +84,18 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Home";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.BackColor = SystemColors.ActiveCaption;
+            button4.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button4.Location = new Point(1187, 562);
+            button4.Name = "button4";
+            button4.Size = new Size(152, 81);
+            button4.TabIndex = 6;
+            button4.Text = "Exit";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // label2
             // 
@@ -318,5 +332,6 @@
         private Label label3;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private PictureBox pictureBox1;
+        private Button button4;
     }
 }

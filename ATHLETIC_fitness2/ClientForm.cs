@@ -31,7 +31,7 @@ namespace ATHLETIC_fitness2
         private async void LoadCombos()
         {
             GymController controller = new GymController();
-            ReservationController reservationController = new ReservationController();  
+            ReservationController reservationController = new ReservationController();
             comboBox1.DataSource = await controller.GetAllGyms();
             comboBox1.DisplayMember = "FullAddress";
             if (comboBox1.SelectedItem != null)
@@ -97,7 +97,7 @@ namespace ATHLETIC_fitness2
                 MessageBox.Show("Select a workout class from the list!");
                 return;
             }
-            if (comboBox1.SelectedItem == null) 
+            if (comboBox1.SelectedItem == null)
             {
                 MessageBox.Show("Select a gym!");
                 return;
@@ -123,10 +123,10 @@ namespace ATHLETIC_fitness2
 
                 await reservationController.CreateReservation(reservation);
                 MessageBox.Show("You successfully booked a workout class!");
-            }           
+            }
             catch (Exception ex)
             {
-                
+
                 MessageBox.Show(ex.Message);
             }
         }
@@ -151,7 +151,7 @@ namespace ATHLETIC_fitness2
                 MessageBox.Show("Invalid username or password");
                 return;
             }
-            if(string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text)  || string.IsNullOrWhiteSpace(textBox3.Text) || string.IsNullOrWhiteSpace(textBox4.Text) || string.IsNullOrWhiteSpace(textBox5.Text) || string.IsNullOrWhiteSpace(textBox6.Text) || string.IsNullOrWhiteSpace(textBox7.Text) || string.IsNullOrWhiteSpace(textBox8.Text))
+            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text) || string.IsNullOrWhiteSpace(textBox3.Text) || string.IsNullOrWhiteSpace(textBox4.Text) || string.IsNullOrWhiteSpace(textBox5.Text) || string.IsNullOrWhiteSpace(textBox6.Text) || string.IsNullOrWhiteSpace(textBox7.Text) || string.IsNullOrWhiteSpace(textBox8.Text))
             {
                 MessageBox.Show("All fields are required!");
             }
@@ -346,14 +346,14 @@ namespace ATHLETIC_fitness2
         private async void button20_Click(object sender, EventArgs e)
         {
             ReservationController reservationController = new ReservationController();
-            Reservation reservation=comboBox4.SelectedItem as Reservation;
-            if (reservation == null) 
+            Reservation reservation = comboBox4.SelectedItem as Reservation;
+            if (reservation == null)
             {
                 MessageBox.Show("Select reservation!");
                 return;
             }
             bool result = await reservationController.DeleteReservation(reservation.ClientId, reservation.WorkoutId);
-            if (result)            
+            if (result)
             {
                 MessageBox.Show("You successfully canceled your reservation!");
             }
@@ -361,6 +361,18 @@ namespace ATHLETIC_fitness2
             {
                 MessageBox.Show("Cannot cancel reservation");
             }
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            form.Show();
+            this.Hide();
         }
     }
 }
